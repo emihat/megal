@@ -11,9 +11,9 @@ IMG="perl:latest"
 docker pull $IMG
 
 docker run -v $DATA_DIR:/data -v /scripts:/scripts \
-           -v /data:/db \
+           -v /mnt/data/megap/:/megapdata \
            $IMG perl /scripts/Qual_Filter_FASTQFASTA \
-           /data/$INPUT_FNAME /db/ascii
+           /data/$INPUT_FNAME /megapdata/ascii
 
 mv ${DATA_DIR}/${OUTPUT_FNAME} $OUTPUT
 
