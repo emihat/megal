@@ -10,8 +10,8 @@ $input = $ARGV[0];
 open(INPUT, "$input") or die "Can't open \"$input\"\n";
 
 # add by imsbio
-die "Select output directories" if @ARGV < 3;
-my ($outdir1, $outdir2) = ($ARGV[1], $ARGV[2]);
+#die "Select output directories" if @ARGV < 3;
+#my ($outdir1, $outdir2) = ($ARGV[1], $ARGV[2]);
 
 $sum = 0;
 $counter = 0;
@@ -31,6 +31,18 @@ for($i=0;$i<$counter;$i++){
 	$sha += $ar[$i]/$sum*(log($ar[$i]/$sum)/log(2));
 }
 $sha2 = -1*$sha;
+
+# by imsbio
+if($sha2>10){
+  print "Metagenome\n";
+}
+else{
+  print "Meta16S\n";
+}
+exit;
+
+
+
 if($input =~ /^(\S+?)\.20\.kmer\.dump/){
 	$fi = $1;
 	if($sha2>10){
