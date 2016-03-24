@@ -1,4 +1,4 @@
-<tool id="megap_6" name="cut" version="0.1.0">
+<tool id="megap_6" name="Cut" version="0.1.0">
   <description>Cut sequence</description>
   <command interpreter="bash">
     cut.sh $input $output -c -"${cnum}"
