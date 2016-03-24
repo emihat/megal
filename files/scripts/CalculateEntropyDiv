@@ -9,10 +9,6 @@ my (@ar) = ();
 $input = $ARGV[0];
 open(INPUT, "$input") or die "Can't open \"$input\"\n";
 
-# add by imsbio
-#die "Select output directories" if @ARGV < 3;
-#my ($outdir1, $outdir2) = ($ARGV[1], $ARGV[2]);
-
 $sum = 0;
 $counter = 0;
 @ar = ();
@@ -39,24 +35,19 @@ if($sha2>10){
 else{
   print "Meta16S\n";
 }
-exit;
 
-
-
-if($input =~ /^(\S+?)\.20\.kmer\.dump/){
-	$fi = $1;
-	if($sha2>10){
-		#system("mv $fi /home/hmori/MDB/Metagenome/");
-		system("mv $fi $outdir1");
-	}
-	else{
-		#system("mv $fi /home/hmori/MDB/Meta16S/");
-		system("mv $fi $outdir2");
-	}
-}
-else{
-	print "File Name error $input\n";
-}
+#if($input =~ /^(\S+?)\.20\.kmer\.dump/){
+#	$fi = $1;
+#	if($sha2>10){
+#		system("mv $fi /home/hmori/MDB/Metagenome/");
+#	}
+#	else{
+#		system("mv $fi /home/hmori/MDB/Meta16S/");
+#	}
+#}
+#else{
+#	print "File Name error $input\n";
+#}
 exit;
 
 
