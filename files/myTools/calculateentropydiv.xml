@@ -7,10 +7,7 @@
     <param format="fasta" name="input" type="data" label="Dump" />
   </inputs>
   <outputs>
-<!--
-    <data format="tabular" name="output1" label="${tool.name} Metagenome" />
-    <data format="tabular" name="output2" label="${tool.name} Meta16S" />
--->
+    <data format="tabular" name="output" label="${tool.name} Result" />
   </outputs>
 
   <tests>
